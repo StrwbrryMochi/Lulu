@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Vaga;
+  }
+  
+  @font-face {
+    font-family: Mikhaloo;
+    src: url(../Fonts/Mikhaloo.ttf);
+  }
+  
+  @font-face {
+    font-family: Vaga;
+    src: url(../Fonts/QTVagaRound.otf);
+  }
+  
+  @font-face {
+    font-family: VagaBold;
+    src: url(../Fonts/QTVagaRound-Bold.otf);
+  }
+
+  :root {
+    --light: #f0f8ff;
+    --shady-light: #cbdded;
+    --dark: #86c5d8;
+    --darker: #6698a7;
+    --main: #afdceb;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--dark);
+    padding: 20px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .navBtn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: var(--darker);
+    width: 50px;
+    height: 50px;
+    border-radius: 50vw;
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+
+  .profile-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vw;
+    border: 2px var(--darker) dashed;
+    width: 60px;
+    height: 60px;
+  }
+
+  .navBtn img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50vw;
+    border: none;
+    cursor: pointer;
+  }
+
+  .logo img {
+    display: block;
+    width: 100px;
+  }
+  
+  main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    background-color: var(--light);
+  }
+
+  .Lulu-Main {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+    border: 2px var(--darker) solid;
+    border-radius: 50vw;
+    width: 80px;
+    height: 80px;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+  }
+
+  .Lulu-Main:hover {
+    background-color: var(--shady-light);
+  }
+
+  .Lulu-Main img {
+    margin-top: 15px;
+    width: 100px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    main {
+        height: 80vh;
+    }
+    
+    .Lulu-Main {
+       display: none;
+      }
+
+    footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 10vh;
+        width: 100%;
+        background-color: var(--darker);
+        gap: 100px;
+    }
+
+    .LuluBorder {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -50px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50vw;
+        background-color: var(--light);
+    }
+
+    .Lulu-Footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--light);
+        border: 2px var(--darker) solid;
+        border-radius: 50vw;
+        width: 80px;
+        height: 80px;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    .Lulu-Footer::before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 50px;
+        left: -17px;
+        box-shadow: 9px -9px 0px 0px var(--light);
+        background-color: var(--darker);
+        border-radius: 50vw;
+    }
+
+    .Lulu-Footer::after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 50px;
+        right: -17.5px;
+        box-shadow: -9px -9px 0px 0px var(--light);
+        background-color: var(--darker);
+        border-radius: 50vw;
+    }
+
+    .Lulu-Footer img {
+        display: block;
+        width: 100px;
+        margin-top: 10px;
+    }
+
+    footer button {
+        position: relative;
+        height: 100%;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #2e5c6a;
+        background: none;
+        cursor: pointer;
+        border: none;
+    }
+
+    footer button.active {
+        color: var(--light);
+    }
+
+    footer button.active::before {
+        content: '';
+        position: absolute;
+        width:40px;
+        height: 10px;
+        border-radius: 0 0 50vw 50vw;
+        top: 0;
+        background-color: #2e5c6a;
+    }
+
+    footer button i{
+        font-size: 2em;
+    }
+  }
