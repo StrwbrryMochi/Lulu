@@ -1,0 +1,299 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Vaga;
+  }
+  
+  @font-face {
+    font-family: Mikhaloo;
+    src: url(../Fonts/Mikhaloo.ttf);
+  }
+  
+  @font-face {
+    font-family: Vaga;
+    src: url(../Fonts/QTVagaRound.otf);
+  }
+  
+  @font-face {
+    font-family: VagaBold;
+    src: url(../Fonts/QTVagaRound-Bold.otf);
+  }
+
+  :root {
+    --light: #f0f8ff;
+    --shady-light: #cbdded;
+    --dark: #86c5d8;
+    --darker: #6698a7;
+    --main: #afdceb;
+    --very-dark: #366c7d;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--dark);
+    padding: 20px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .profile-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vw;
+    border: 2px var(--darker) dashed;
+    width: 60px;
+    height: 60px;
+  }
+
+  .navBtn img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50vw;
+    border: none;
+    cursor: pointer;
+  }
+
+  .logo img {
+    display: block;
+    width: 100px;
+  }
+  
+  main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f8ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'%3E%3Cpath fill='%236698a7' fill-opacity='0.4' d='M192 15v2a11 11 0 0 0-11 11c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H145v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11 13 13 0 1 1 .02 26 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43a6.1 6.1 0 0 0-3.03 4.87V143h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 181 164a11 11 0 0 0 11 11v2a13 13 0 0 1-13-13 12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84a6.1 6.1 0 0 0-4.87-3.03H145v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 124 181a11 11 0 0 0-11 11h-2a13 13 0 0 1 13-13c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43a6.1 6.1 0 0 0 3.03-4.87V145h-35.02a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 107 124a11 11 0 0 0-22 0c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H49v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11A13 13 0 0 1 81 192h-2a11 11 0 0 0-11-11c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V145H11.98a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 0 1 0 177v-2a11 11 0 0 0 11-11c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H47v-35.02a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 28 109a13 13 0 1 1 0-26c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43A6.1 6.1 0 0 0 47 84.02V49H11.98a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 11 28 11 11 0 0 0 0 17v-2a13 13 0 0 1 13 13c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84A6.1 6.1 0 0 0 11.98 47H47V11.98a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 68 11 11 11 0 0 0 79 0h2a13 13 0 0 1-13 13 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43A6.1 6.1 0 0 0 49 11.98V47h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 85 68a11 11 0 0 0 22 0c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H143V11.98a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 124 13a13 13 0 0 1-13-13h2a11 11 0 0 0 11 11c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V47h35.02a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 179 28a13 13 0 0 1 13-13zM84.02 143a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 83 124a13 13 0 1 1 26 0c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84a6.1 6.1 0 0 0 4.87 3.03H143v-35.02a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 164 107a11 11 0 0 0 0-22c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V49h-35.02a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 1 1 83 68a12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84A6.1 6.1 0 0 0 84.02 49H49v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 28 85a11 11 0 0 0 0 22c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V143h35.02z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  .home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 1.5em;
+    color: var(--dark);
+    border: 2px var(--darker) dashed;
+    background-color: var(--light);
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+
+  .home:hover {
+    background-color: #e7f1fa;
+    color: var(--darker);
+    border-color: var(--main);
+  }
+
+  .user-border {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vw;
+    border: 2px var(--darker) dashed;
+  }
+
+  .user-border img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50vw;
+    border: none;
+    cursor: pointer;
+  }
+
+  .Chat-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    background-color: var(--light);
+  }
+
+  .Chat {
+    width: 100%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .Input-Container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 62px;
+    min-height: 20px;
+    max-height: 200px; 
+    padding: 10px;
+    padding-right: 50px;
+    background-color: var(--shady-light);
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start; 
+}
+
+textarea {
+    min-height: 20px; 
+    max-height: 180px;
+    width: 99%;
+    resize: none;
+    overflow-y: auto; 
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 10px;
+    color: var(--darker);
+    font-size: 1.2em;
+}
+
+.Input-Container button {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  border-radius: 50vw;
+  border: none;
+  right: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease
+}
+
+.Input-Container button.disabled {
+  background-color: #d0e0ed;
+  opacity: 0.5;
+  color: #b2c0cb;
+  transform: scale(0.9); 
+  cursor: not-allowed;
+  pointer-events: none; 
+}
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: var(--shady-light);
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: var(--light); 
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--darker); 
+}
+
+.chat-message {
+  align-self: flex-end;
+  background-color: var(--darker);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+
+  @media (max-width: 768px) {
+
+    nav {
+        display: flex;
+    }
+
+    main {
+        height: 90vh;
+    }
+
+    .navHome {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        background: none;
+        font-size: 1.5em;
+        border: none;
+        color: var(--very-dark);
+        cursor: pointer;
+    }
+
+    .user-border {
+        display: none;
+    }
+
+    .home {
+        display: none;
+    }
+
+    /* Lulu Chat */
+    .Chat-container {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+    }
+
+    .Chat {
+        height: 86%;
+        overflow-y: auto;
+    }
+    
+    .Chat::-webkit-scrollbar {
+        display: none;
+    }
+
+    .chat-message {
+        max-width: 60%;
+      }
+
+    .Input-Container {
+      width: 90%;
+      font-size: 1em;
+    }
+  }

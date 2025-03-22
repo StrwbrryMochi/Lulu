@@ -20,15 +20,44 @@ include '../Backend/Data.php';
             <img src="../Assets/Images/Lulu.svg" alt="">
         </div>
         <div class="navBtn">
-            <button class="notif">
-                <i class="fa-solid fa-bell"></i>
-            </button>
             <div class="profile-border">
                 <img src="<?php echo htmlspecialchars($Photo) ?>" alt="">
             </div>
         </div>
     </nav>
     <main>
+
+        <div class="profile-modal">
+            <button class="modal-back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <img src="<?php echo htmlspecialchars($Photo)?>" alt="">
+            <h1><?php echo htmlspecialchars($FirstName). ' ' . htmlspecialchars($LastName)?></h1>
+            <p><?php echo htmlspecialchars($Email)?></p>
+            <div class="modal-btn">
+                <button>
+                    <i class="fa-solid fa-user"></i>
+                    Account
+                </button>
+                <button>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Log Out
+                </button>
+            </div>
+        </div>
+
+        <div class="Dashboard">
+            <div class="grid1">
+                <div class="greet">
+                    It's good to see you again, <span><?php echo htmlspecialchars($FirstName)?></span>. You're in a safe space!
+                </div>
+                <img src="../Assets/Images/Greetings.svg" alt="">
+            </div>
+            <div class="grid2"></div>
+            <div class="grid3"></div>
+            <div class="grid4"></div>
+            <div class="grid5"></div>
+        </div>
         <div class="Lulu-Main">
             <img src="../Assets/Images/logos.svg" alt="">
         </div>
@@ -52,3 +81,18 @@ include '../Backend/Data.php';
 </html>
 
 <?php include '../Backend/alerts.php'; ?>
+
+<script>
+    const Lulu = document.querySelector(".Lulu-Main");
+    const LuluMobile = document.querySelector(".Lulu-Footer");
+
+    Lulu.addEventListener("click", function (){
+        window.location.href = "Lulu.php";
+    });
+
+    LuluMobile.addEventListener("click", function() {
+        window.location.href = "Lulu.php";
+    })
+</script>
+
+<script src="../Assets/Scripts/Modal.js"></script>
