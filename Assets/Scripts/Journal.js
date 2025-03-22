@@ -9,18 +9,18 @@ function openJournal() {
 }
 
 function closeJournal() {
-    profileModal.classList.remove("active");
+    Journal.classList.remove("active");
     setTimeout(() => {
-        if (!profileModal.classList.contains("active")) {
-            profileModal.style.display = "none";
+        if (!Journal.classList.contains("active")) {
+            Journal.style.display = "none";
         }
     }, 300);
 }
 
 function toggleJournal() {
-    if (profileModal.classList.contains("active")) {
-        closeModal();
+    if (Journal.classList.contains("active")) {
+        closeJournal();
     } else {
-        openModal();
+        openJournal();
     }
 }
