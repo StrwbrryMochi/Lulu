@@ -190,6 +190,15 @@
     background-color: var(--very-dark);
   }
 
+  form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .grid1 img {
     position: absolute;
     display: block;
@@ -209,27 +218,81 @@
   }
 
   .grid2 {
+    background-color: var(--darker);
     border-radius: 20px;
       grid-row: span 2 / span 2;
       grid-column-start: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 2em;
+    color: var(--light);
+  }
+
+  .grid2 img {
+    width: 200px;
+    margin-top: 20px;
   }
 
   .grid3 {
+    background-color: var(--dark);
     border-radius: 20px;
       grid-row: span 2 / span 2;
       grid-row-start: 3;
+      padding: 20px;
   }
 
+  .grid3 textarea {
+    height: 200PX;
+    width: 99%;
+    resize: none;
+    overflow-y: auto; 
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 10px;
+    color: var(--darker);
+    font-size: 1.2em;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  textarea::-webkit-scrollbar-track {
+    background: var(--shady-light);
+    border-radius: 10px;
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background: var(--light); 
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: var(--darker); 
+  } 
+
   .grid4 {
+    background-color: var(--main);
     border-radius: 20px;
       grid-row: span 2 / span 2;
       grid-row-start: 3;
+      padding: 20px;
   }
 
   .grid5 {
+    background-color: var(--shady-light);
     border-radius: 20px;
       grid-row: span 2 / span 2;
       grid-row-start: 3;
+      padding: 20px;
   }
 
   .Lulu-Main {
@@ -290,6 +353,12 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%236698a7' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       z-index: 10;
       border-radius: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .profile-modal.active {
+      transform: translateY(0);
     }
 
     .modal-back {
@@ -360,6 +429,18 @@
       width: calc(50% - 5px);
       height: 160px;
       border-radius: 20px;
+      padding: 10px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 1em;
+    color: var(--light);
+  }
+
+  .grid2 img {
+    width: 130px;
+    margin-top: 0px;
   }
 
     footer {

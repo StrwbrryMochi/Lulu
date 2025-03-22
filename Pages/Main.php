@@ -34,16 +34,18 @@ include '../Backend/Data.php';
             <img src="<?php echo htmlspecialchars($Photo)?>" alt="">
             <h1><?php echo htmlspecialchars($FirstName). ' ' . htmlspecialchars($LastName)?></h1>
             <p><?php echo htmlspecialchars($Email)?></p>
+            <form action="../Backend/LogOut.php">
             <div class="modal-btn">
-                <button>
+                <button type="button">
                     <i class="fa-solid fa-user"></i>
                     Account
                 </button>
-                <button>
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    Log Out
-                </button>
+                    <button type="submit">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Log Out
+                    </button>
             </div>
+            </form>
         </div>
 
         <div class="Dashboard">
@@ -53,10 +55,20 @@ include '../Backend/Data.php';
                 </div>
                 <img src="../Assets/Images/Greetings.svg" alt="">
             </div>
-            <div class="grid2"></div>
-            <div class="grid3"></div>
-            <div class="grid4"></div>
-            <div class="grid5"></div>
+            <div class="grid2">
+                <div class="title">Mood</div>
+                <img src="../Assets/Images/Emojis/happy-svgrepo-com.svg" alt="">
+            </div>
+            <div class="grid3">
+                <div class="title">Self-Journal</div>
+                <textarea name="" id="" placeholder="What's on your mind, <?php echo htmlspecialchars($FirstName)?>"></textarea>
+            </div>
+            <div class="grid4">
+                <div class="title">Self-care Routine</div>
+            </div>
+            <div class="grid5">
+                <div class="title">Your Wellness Recap</div>
+            </div>
         </div>
         <div class="Lulu-Main">
             <img src="../Assets/Images/logos.svg" alt="">
@@ -72,7 +84,7 @@ include '../Backend/Data.php';
                 <img src="../Assets/Images/logos.svg" alt="">
             </div>
         </div>
-        <button>
+        <button class="option">
                 <i class="fa-solid fa-gear"></i>
                 <p>Settings</p>
         </button>
