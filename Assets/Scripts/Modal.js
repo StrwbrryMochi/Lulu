@@ -7,7 +7,7 @@ function openModal() {
     profileModal.style.display = "flex";
     setTimeout(() => {
         profileModal.classList.add("active");
-    }, 10); // Small delay to allow CSS transition
+    }, 10);
 }
 
 function closeModal() {

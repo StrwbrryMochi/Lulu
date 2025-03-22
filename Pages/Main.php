@@ -61,7 +61,9 @@ include '../Backend/Data.php';
             </div>
             <div class="grid3">
                 <div class="title">Self-Journal</div>
-                <textarea name="" id="" placeholder="What's on your mind, <?php echo htmlspecialchars($FirstName)?>"></textarea>
+                <div class="entry-container">
+                    <p>What's on your mind, <?php echo htmlspecialchars($FirstName)?>?</p>
+                </div>
             </div>
             <div class="grid4">
                 <div class="title">Self-care Routine</div>

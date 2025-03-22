@@ -247,7 +247,20 @@
       padding: 20px;
   }
 
-  .grid3 textarea {
+  .entry-container {
+    height: 260px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    color: var(--light);
+    cursor: pointer;
+  }
+
+  .entry-container:hover {
+    background-color: var(--darker);
+  }
+
+  textarea {
     height: 200PX;
     width: 99%;
     resize: none;
