@@ -32,7 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $stmt->bind_param("ss", $Email, $Password);
 
     if ($stmt->execute()) {
-        $_SESSION['Email'] = $Email;
+        $userID = $stmt->insert_id;
+        $_SESSION['userID'] = $userID;
         echo "<script>window.location.href='Register1.php';</script>";
     } else {
         echo "<script>alert('Error registering user: " . $stmt->error . "'); window.location.href='register.php?register_error=true';</script>";

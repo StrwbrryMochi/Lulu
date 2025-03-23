@@ -254,23 +254,248 @@
     transition: 0.3s ease;
     color: var(--light);
     cursor: pointer;
+    overflow: auto;
+    font-size: 1.2em;
   }
+
+  .entry-container::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .entry-container::-webkit-scrollbar-track {
+    background: var(--shady-light);
+    border-radius: 10px;
+  }
+  
+  .entry-container::-webkit-scrollbar-thumb {
+    background: var(--light); 
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+
+  /* Journal Modal */
+  .journal-modal {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.9);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 36%;
+    height: 90%;
+    background-color: var(--shady-light);
+    border-radius: 20px;
+    z-index: 10;
+    border: 2px var(--very-dark) solid;
+    gap: 20px;
+}
+
+.journal-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.journal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.journal-header button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 50vw;
+  background: none;
+  border: 2px var(--darker) dashed;
+  color: var(--darker);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.journal-header button:hover {
+  background-color: var(--darker);
+  color: var(--main);
+}
+
+.journal-header h1 {
+  color: var(--very-dark);
+}
+
+.journal-body {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px var(--dark) dashed;
+  padding: 10px;
+}
+
+.journal {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.journal-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  font-weight: 800;
+  color: var(--very-dark);
+}
+
+.journal-title p {
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--darker);
+}
+
+.journal-time {
+  color: var(--very-dark);
+}
+
+.journal:hover {
+  background-color: var(--main);
+}
+
+.add-journal {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darker);
+  color: var(--dark);
+  font-size: 4em;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50vw;
+  transition: 0.3s ease;
+}
+
+.add-journal:hover {
+  background-color: var(--very-dark);
+  color: var(--main);
+}
+
+/* Entry */
+.Entry {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.9);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 36%;
+  height: 90%;
+  background-color: var(--shady-light);
+  border-radius: 20px;
+  z-index: 10;
+  border: 2px var(--very-dark) solid;
+  gap: 20px;
+}
+
+.Entry.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.Entry form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.Entry-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Entry-header button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 50vw;
+  background: none;
+  border: 2px var(--darker) dashed;
+  color: var(--darker);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.Entry-header button:hover {
+  background-color: var(--darker);
+  color: var(--main);
+}
 
   .entry-container:hover {
     background-color: var(--darker);
   }
 
   textarea {
-    height: 200PX;
-    width: 99%;
+    height: 100%;
+    width: 100%;
     resize: none;
     overflow-y: auto; 
-    border: none;
+    border: 2px var(--darker) dashed;
     background: transparent;
     outline: none;
     padding: 10px;
     color: var(--darker);
     font-size: 1.2em;
+    border-radius: 20px;
+  }
+
+  input {
+    background: none;
+    border: none;
+    color: var(--very-dark);
+    font-size: 1.5em;
+    outline: none;
+    text-align: center;
+  }
+
+  input::placeholder {
+    color: var(--very-dark);
+    opacity: 0.7;
+  }
+
+  input:focus::placeholder {
+    color: transparent;
   }
 
   textarea::-webkit-scrollbar {
@@ -292,6 +517,78 @@
     background: var(--darker); 
   } 
 
+  .add-Entry {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darker);
+    color: var(--dark);
+    font-size: 4em;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50vw;
+    transition: 0.3s ease;
+  }
+  
+  .add-Entry:hover {
+    background-color: var(--very-dark);
+    color: var(--main);
+  }
+
+  .view-entry {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.9);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 36%;
+    height: 90%;
+    background-color: var(--shady-light);
+    border-radius: 20px;
+    z-index: 10;
+    border: 2px var(--very-dark) solid;
+    gap: 20px;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .entry-header h1 {
+    color: var(--very-dark);
+  }
+
+  .entry-header p {
+    font-size: 0.8em;
+    color: var(--darker);
+  }
+
+  .user-entry {
+    width: 100%;
+    height: 100%;
+    color: var(--very-dark);
+    overflow: auto;
+  }
+  
+  .view-entry.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
   .grid4 {
     background-color: var(--main);
     border-radius: 20px;
@@ -299,6 +596,48 @@
       grid-row-start: 3;
       padding: 20px;
   }
+
+  .routines {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+.round-checkbox input {
+  display: none;
+}
+
+.round-checkbox .checkmark {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--darker);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.round-checkbox input:checked + .checkmark {
+  background-color: var(--very-dark);
+  border-color: var(--very-dark);
+}
+
+.round-checkbox input:checked + .checkmark::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
   .grid5 {
     background-color: var(--shady-light);
@@ -407,6 +746,65 @@
     .modal-btn {
       width: 90%;
       gap: 20px;
+    }
+
+    .entry-container {
+      height: 85%;
+    }
+
+    .entry-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .journal-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: var(--shady-light);
+      z-index: 10;
+      border-radius: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .journal-modal.active {
+      transform: translateY(0);
+    }
+
+    .Entry {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: var(--shady-light);
+      z-index: 10;
+      border-radius: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .Entry.active {
+      transform: translateY(0);
+    }
+
+    .view-entry {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: var(--shady-light);
+      z-index: 10;
+      border-radius: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .view-entry.active {
+      transform: translateY(0);
     }
 
     .Dashboard {

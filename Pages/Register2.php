@@ -2,10 +2,10 @@
 include '../Backend/connections.php';
 session_start();
 
-if (isset($_SESSION['Email'])) { 
-    $Email = $_SESSION['Email'];
+if (isset($_SESSION['userID'])) { 
+    $userID = $_SESSION['userID'];
 
-    $sqlfetch = "SELECT * FROM usertbl WHERE Email = '$Email'";
+    $sqlfetch = "SELECT * FROM usertbl WHERE userID = '$userID'";
     $result = mysqli_query($conn, $sqlfetch);
 
     if ($conn && mysqli_num_rows($result) > 0) {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $stmt = $conn->prepare("UPDATE usertbl SET Birthday = '$Birthday', Address = '$Address', Contact = '$Contact' WHERE userID = $userID");
 
     if ($stmt->execute()) {
-        $_SESSION['Email'] = $Email;
+        $_SESSION['userID'] = $userID;
         echo "<script>window.location.href='RegisterPhoto.php';</script>";
     } else {
         echo "<script>alert('Error registering user: " . $stmt->error . "'); window.location.href='register2.php?register_error=true';</script>";

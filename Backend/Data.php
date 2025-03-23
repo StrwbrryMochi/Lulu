@@ -3,17 +3,17 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if (isset($_SESSION['Email'])) { 
-    $Email = $_SESSION['Email'];
+if (isset($_SESSION['userID'])) { 
+    $userID = $_SESSION['userID'];
     
-    $sqlfetch = "SELECT * FROM usertbl WHERE Email = ?";
+    $sqlfetch = "SELECT * FROM usertbl WHERE userID = ?";
     $stmt = $conn->prepare($sqlfetch);
     
     if (!$stmt) {
         die("SQL prepare failed: " . $conn->error);
     }
 
-    $stmt->bind_param("s", $Email);
+    $stmt->bind_param("i", $userID);
     
     if (!$stmt->execute()) {
         die("SQL execute failed: " . $stmt->error);

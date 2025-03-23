@@ -1,6 +1,7 @@
 <?php
 include '../Backend/connections.php';
 include '../Backend/Data.php';
+include '../Backend/journal.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +49,75 @@ include '../Backend/Data.php';
             </form>
         </div>
 
+        <div class="journal-modal">
+            <div class="journal-header">
+                <h1>Your Journals</h1>
+                <button class="close-journal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="journal-body">
+                <?php
+               $journals = fetchJournal($conn, $userID);
+               foreach ($journals as $journalData):
+                $formattedDate = date("F j, Y", strtotime($journalData['created_at']));
+                $formattedTime = date("g:i A", strtotime($journalData['created_at'])); 
+                ?>
+                    <div class="journal"
+                        data-entry="<?= htmlspecialchars($journalData['entry']) ?>" 
+                        data-title="<?= htmlspecialchars($journalData['journal_title']) ?>"
+                        data-date="<?= date("F j, Y", strtotime($journalData['created_at'])) ?>"
+                        data-time="<?= date("g:i A", strtotime($journalData['created_at'])) ?>"
+                        data-id="<?= $journalData['journal_id'] ?>">
+                        <div class="journal-title">
+                            <?= htmlspecialchars($journalData['journal_title'])?>
+                            <p><?= $formattedDate ?></p>
+                        </div>
+                        <div class="journal-time">
+                            <?= $formattedTime ?>
+                        </div>
+                    </div>  
+                <?php endforeach; ?>
+            </div>
+                <button class="add-journal">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+        </div>
+
+        <div class="Entry">
+            <form action="../Backend/journal.php" method="POST">
+            <div class="Entry-header">
+                <button class="back-entry" type="button">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <input type="text" placeholder="Title" name="journal-name" required autocomplete="off">
+                <button class="close-entry" type="button">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <textarea name="journal-entry" id="" required></textarea>
+                <button class="add-Entry" type="submit" name="submit-journal">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="view-entry">
+            <div class="Entry-header">
+                <button class="back-entry" type="button">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="entry-header">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <button class="close-entry" type="button">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="user-entry"></div>
+        </div>
+
         <div class="Dashboard">
             <div class="grid1">
                 <div class="greet">
@@ -61,12 +131,43 @@ include '../Backend/Data.php';
             </div>
             <div class="grid3">
                 <div class="title">Self-Journal</div>
+                <?php
+                $latestEntry = fetchLatestJournal($conn, $userID);
+                ?>
                 <div class="entry-container">
-                    <p>What's on your mind, <?php echo htmlspecialchars($FirstName)?>?</p>
+                <?php if ($latestEntry): ?>
+                    <?= htmlspecialchars($latestEntry) ?>
+                <?php else: ?>
+                    What's on your mind, <?= htmlspecialchars($FirstName) ?>?
+                <?php endif; ?>
                 </div>
             </div>
+
             <div class="grid4">
                 <div class="title">Self-care Routine</div>
+                <div class="routines">
+                <label class="round-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="round-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="round-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="round-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="round-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            
+                </div>
             </div>
             <div class="grid5">
                 <div class="title">Your Wellness Recap</div>
@@ -110,3 +211,4 @@ include '../Backend/Data.php';
 </script>
 
 <script src="../Assets/Scripts/Modal.js"></script>
+<script src="../Assets/Scripts/Journal.js"></script>

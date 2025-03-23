@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($Email && $passwordPost) {
         // Prepare and execute SQL query
-        $stmt = $conn->prepare("SELECT Password FROM usertbl WHERE Email = ?");
+        $stmt = $conn->prepare("SELECT userID, Password FROM usertbl WHERE Email = ?");
         if (!$stmt) {
             die("Prepare failed: " . $conn->error);
         }
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Verify password (update if passwords are stored in plain text)
             if ($passwordPost === $db_password) {
-                $_SESSION['Email'] = $Email;
+                $_SESSION['userID'] = $userID;
                 echo "<script>window.location.href='Main.php?welcome=true';</script>";
                 exit; // Ensure script stops executing after redirection
             } else {
